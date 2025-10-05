@@ -9,8 +9,8 @@ def sample_run_anonymizer():
     # analyzer results (potentially coming from presidio-analyzer) and
     # Operators to get the anonymization output:
     result = engine.anonymize(
-        text=input("text: "),
-        analyzer_results=[RecognizerResult(entity_type="PERSON", start=int(input("start: ")), end=int(input("end: ")), score=0.8)],
+        text="My name is Bond",
+        analyzer_results=[RecognizerResult(entity_type="PERSON", start=11, end=15, score=0.8)],
         operators={"PERSON": OperatorConfig("replace", {"new_value": "BIP"})}
     )
 
